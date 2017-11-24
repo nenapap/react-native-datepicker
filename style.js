@@ -21,11 +21,14 @@ let style = StyleSheet.create({
     height: 40,
     borderWidth: 1,
     borderColor: '#aaa',
-    alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+
   },
   dateText: {
-    color: '#333'
+    color: '#3f5262',
+    fontFamily: 'arial',
+    fontWeight: 'bold',
+    fontSize: 16
   },
   placeholderText: {
     color: '#c9c9c9'
