@@ -161,7 +161,8 @@ class DatePicker extends Component {
     if (date instanceof Date) {
       return Moment(date).format(format);
     } else {
-      return Moment(this.getDate(date)).format(format);
+      const newFormat  = this.props.printedFormat ? this.props.printedFormat : format;
+      return Moment(this.getDate(date)).format(newFormat);
     }
   }
 
@@ -356,7 +357,7 @@ class DatePicker extends Component {
               <View style={dateInputStyle}>
                 {this.getTitleElement()}
               </View>
-            :
+              :
               <View/>
           }
           {this._renderIcon()}
@@ -454,6 +455,7 @@ DatePicker.propTypes = {
   androidMode: PropTypes.oneOf(['calendar', 'spinner', 'default']),
   date: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date), PropTypes.object]),
   format: PropTypes.string,
+  printedFormat: PropTypes.string,
   minDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   maxDate: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Date)]),
   height: PropTypes.number,
